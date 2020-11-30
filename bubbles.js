@@ -17,20 +17,23 @@ function printHighScore (arr) {
 
 function printHSS (arr) {
 	const highScoreSolutions = [];
-	let hSSList = '';
+	//let hSSList = '';
 	for (i = 0; i < arr.length; i++) {
-		if (arr[i] == Math.max(...arr)) {
-			highScoreSolutions.push(i);
+		if (arr[i] == Math.max(...arr) && highScoreSolutions.length == 0) {
+			highScoreSolutions.push(`#${i}`);
+		} else if (arr[i] == Math.max(...arr)) {
+			highScoreSolutions.push(` #${i}`);
 		}
 	}
+	/*
 	for (i = 0; i < highScoreSolutions.length; i++) {
 		if (i == highScoreSolutions.length - 1) {
 			hSSList = hSSList.concat(`#${highScoreSolutions[i]}`);
 		} else {	
 			hSSList = hSSList.concat(`#${highScoreSolutions[i]}, `);
 		}
-	}
-	console.log(`Solutions with highest score: ${hSSList}`);
+	}*/
+	console.log(`Solutions with highest score: ${highScoreSolutions}`);
 }
 
 function fullReport (arr) {
